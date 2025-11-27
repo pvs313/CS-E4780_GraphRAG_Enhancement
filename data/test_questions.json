@@ -1,0 +1,85 @@
+[
+  {
+    "question": "Which scholars won prizes in Chemistry and were affiliated with Harvard University?",
+    "expected_strings": [
+      "Dudley R. Herschbach",
+      "Elias James Corey",
+      "Martin Karplus",
+      "Robert Burns Woodward",
+      "Theodore William Richards",
+      "Walter Gilbert",
+      "William N. Lipscomb"
+    ]
+  },
+  {
+    "question": "How many scholars were born in Shanghai?",
+    "expected_strings": [
+      "3"
+    ]
+  },
+  {
+    "question": "Which country has produced the most Nobel Prize winners in Chemistry?",
+    "expected_strings": [
+      "USA"
+    ]
+  },
+  {
+    "question": "What was the first year that a Nobel Prize in Chemistry was awarded?",
+    "expected_strings": [
+      "1901"
+    ]
+  },
+  {
+    "question": "Who won the highest adjusted prize amount in Chemistry?",
+    "expected_strings": [
+      "K. Barry Sharpless"
+    ]
+  },
+  {
+    "question": "Which institutions have hosted laureates born in London?",
+    "expected_strings": [
+      "Basel Institute for Immunology",
+      "Harvard Medical School",
+      "Harvard University",
+      "Howard Hughes Medical Institute",
+      "Massachusetts General Hospital",
+      "National Institute for Medical Research",
+      "Princeton University",
+      "Purdue University",
+      "Semiconductor Laboratory of Beckman Instruments, Inc.",
+      "University of Cambridge",
+      "University of Illinois",
+      "University of Nottingham, School of Physics and Astronomy",
+      "University of Oxford",
+      "Victoria University"
+    ]
+  },
+  {
+    "question": "List the top 5 scholars with the most Nobel Prizes.",
+    "expected_strings": [
+      "Frederick Sanger",
+      "John Bardeen",
+      "K. Barry Sharpless",
+      "Linus Carl Pauling",
+      "Marie Curie, née Skłodowska"
+    ]
+  },
+  {
+    "question": "Which institution has the most affiliated Nobel Prize winners in Physics?",
+    "expected_strings": [
+      "University of California"
+    ]
+  },
+  {
+    "question": "What is the earliest birth year among all Nobel Prize winners in Medicine?",
+    "expected_strings": [
+      "1841"
+    ]
+  },
+  {
+    "question": "Which scholars won prizes in both Physics and Chemistry?",
+    "expected_strings": [
+      "Marie Curie"
+    ]
+  }
+]

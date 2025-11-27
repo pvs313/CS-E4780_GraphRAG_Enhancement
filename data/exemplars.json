@@ -1,0 +1,33 @@
+[
+    {
+        "question": "Which Physics laureates were affiliated with University of Cambridge and when did they win?",
+        "schema": "Scholar --WON-> Prize; Scholar --AFFILIATED_WITH-> Institution",
+        "cypher": "MATCH (s:Scholar)-[:WON]->(p:Prize), (s)-[:AFFILIATED_WITH]->(i:Institution) WHERE toLower(p.category) CONTAINS 'physics' AND toLower(i.name) CONTAINS 'university of cambridge' RETURN s.knownName, p.awardYear, i.name"
+    },
+    {
+        "question": "How many female scholars won Nobel Prizes in Chemistry?",
+        "schema": "Scholar --WON-> Prize",
+        "cypher": "MATCH (s:Scholar)-[:WON]->(p:Prize) WHERE toLower(p.category) CONTAINS 'chemistry' AND toLower(s.gender) CONTAINS 'female' RETURN count(*) AS chem_female_winners"
+    },
+    {
+        "question": "What was the first year that a Nobel Prize in Medicine was awarded?",
+        "schema": "Scholar --WON-> Prize",
+        "cypher": "MATCH (s:Scholar)-[:WON]->(p:Prize) WHERE toLower(p.category) CONTAINS 'medicine' RETURN min(p.awardYear) AS first_medicine_year"
+    },
+    {
+        "question": "List institutions in the USA that have affiliated Nobel laureates.",
+        "schema": "Scholar --AFFILIATED_WITH-> Institution --IS_LOCATED_IN-> City --IS_CITY_IN-> Country",
+        "cypher": "MATCH (s:Scholar)-[:AFFILIATED_WITH]->(i:Institution)-[:IS_LOCATED_IN]->(c:City)-[:IS_CITY_IN]->(co:Country) WHERE toLower(co.name) CONTAINS 'usa' RETURN DISTINCT i.name"
+    },
+    {
+        "question": "Which country has produced the most Nobel Prize winners in Economics?",
+        "schema": "Scholar --WON-> Prize; Scholar --BORN_IN-> City --IS_CITY_IN-> Country",
+        "cypher": "MATCH (s:Scholar)-[:WON]->(p:Prize), (s)-[:BORN_IN]->(c:City)-[:IS_CITY_IN]->(co:Country) WHERE toLower(p.category) CONTAINS 'economics' RETURN co.name AS country, count(DISTINCT s) AS winners ORDER BY winners DESC LIMIT 1"
+    },
+    {
+        "question": "Which scholars were born in Germany and later won Physics prizes?",
+        "schema": "Scholar --BORN_IN-> City --IS_CITY_IN-> Country; Scholar --WON-> Prize",
+        "cypher": "MATCH (s:Scholar)-[:BORN_IN]->(c:City)-[:IS_CITY_IN]->(co:Country), (s)-[:WON]->(p:Prize) WHERE toLower(co.name) CONTAINS 'germany' AND toLower(p.category) CONTAINS 'physics' RETURN s.knownName, p.awardYear, co.name"
+    }
+]
+
