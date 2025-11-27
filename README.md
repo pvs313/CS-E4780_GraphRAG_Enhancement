@@ -1,6 +1,6 @@
-# Graph RAG with Kuzu, DSPy and marimo
+# Graph RAG Project
 
-Source code for course project to build a Graph RAG with Kuzu, [DSPy](https://dspy.ai/) and [marimo](https://docs.marimo.io/) (open source, reactive notebooks for Python).
+Built on top of the provided source code and has an improved performance and accuracy. 
 
 ## Setup
 
@@ -32,7 +32,6 @@ uv run create_nobel_api_graph.py
 
 To run Graph RAG pipeline as an marimo notebook, run marimo as follows:
 ```bash
-# Open a marimo notebook in edit mode
 marimo edit submission_workflow.py
 ```
 
